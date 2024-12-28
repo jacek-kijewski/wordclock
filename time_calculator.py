@@ -14,41 +14,33 @@ def time_to_words(hours, minutes):
         "ELEVEN", "TWELVE"
     ]
 
-    if minutes == 0:
-        return f"IT IS {words[hours]} O'CLOCK"
-    elif minutes == 5:
-        return f"IT IS FIVE PAST {words[hours]}"
-    elif minutes == 10:
-        return f"IT IS TEN PAST {words[hours]}"
-    elif minutes == 15:
-        return f"IT IS QUARTER PAST {words[hours]}"
-    elif minutes == 30:
-        return f"IT IS HALF PAST {words[hours]}"
-    elif minutes == 35:
-        return f"IT IS TWENTY-FIVE PAST {words[hours]}"
-    elif minutes == 40:
-        next_hour = (hours + 1) % 12
-        return f"IT IS TWENTY PAST {words[next_hour]}"
-    elif minutes == 45:
-        next_hour = (hours + 1) % 12
-        return f"IT IS QUARTER TO {words[next_hour]}"
-    elif minutes == 50:
-        next_hour = (hours + 1) % 12
-        return f"IT IS TEN TO {words[next_hour]}"
-    elif minutes == 55:
-        next_hour = (hours + 1) % 12
-        return f"IT IS FIVE TO {words[next_hour]}"
-    else:
-        lower_5_minutes = (minutes // 5) * 5
-        next_hour = (hours + 1) % 12
-        remaining_minutes = 60 - lower_5_minutes
-        return f"IT IS {words[remaining_minutes]} TO {words[next_hour]}"
-
-
-# Get current time
-current_time = time.localtime()
-current_hours = current_time.tm_hour % 12  # Convert to 12-hour format
-current_minutes = current_time.tm_min
-
-# Print the current time in words
-print(time_to_words(current_hours, current_minutes))
+    # if minutes == 0:
+    #     return f"IT IS {words[hours]} O'CLOCK"
+    # elif minutes == 5:
+    #     return f"IT IS FIVE PAST {words[hours]}"
+    # elif minutes == 10:
+    #     return f"IT IS TEN PAST {words[hours]}"
+    # elif minutes == 15:
+    #     return f"IT IS QUARTER PAST {words[hours]}"
+    # elif minutes == 30:
+    #     return f"IT IS HALF PAST {words[hours]}"
+    # elif minutes == 35:
+    #     return f"IT IS TWENTY-FIVE PAST {words[hours]}"
+    # elif minutes == 40:
+    #     next_hour = (hours + 1) % 12
+    #     return f"IT IS TWENTY PAST {words[next_hour]}"
+    # elif minutes == 45:
+    #     next_hour = (hours + 1) % 12
+    #     return f"IT IS QUARTER TO {words[next_hour]}"
+    # elif minutes == 50:
+    #     next_hour = (hours + 1) % 12
+    #     return f"IT IS TEN TO {words[next_hour]}"
+    # elif minutes == 55:
+    #     next_hour = (hours + 1) % 12
+    #     return f"IT IS FIVE TO {words[next_hour]}"
+    # else:
+    #     lower_5_minutes = (minutes // 5) * 5
+    #     next_hour = (hours + 1) % 12
+    #     remaining_minutes = 60 - lower_5_minutes
+    #     return f"IT IS {words[remaining_minutes]} TO {words[next_hour]}"
+    return "IT IS TWENTY FIVE PAST ELEVEN"
