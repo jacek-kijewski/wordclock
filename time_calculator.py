@@ -43,4 +43,4 @@ def time_to_words(hours, minutes):
     #     next_hour = (hours + 1) % 12
     #     remaining_minutes = 60 - lower_5_minutes
     #     return f"IT IS {words[remaining_minutes]} TO {words[next_hour]}"
-    return "IT IS TWENTY FIVE PAST ELEVEN"
+    return "IT IS HALF PAST ELEVEN"
