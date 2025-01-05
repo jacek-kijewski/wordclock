@@ -10,6 +10,7 @@ COLOR = (255, 197, 40)  # Example color (R, G, B)
 strip1 = neopixel.NeoPixel(board.D10, NUM_PIXELS_STRIP1, brightness=1, auto_write=False)
 strip2 = neopixel.NeoPixel(board.D12, NUM_PIXELS_STRIP2, brightness=1, auto_write=False)
 
+
 def light_pixels(strip, pixels, color):
     """
     Light specific pixels on a NeoPixel strip.
@@ -23,6 +24,7 @@ def light_pixels(strip, pixels, color):
             strip[pixel] = color
     strip.show()  # Show changes on the strip
 
+
 def control_leds(strip1_pixels, strip2_pixels, color=COLOR):
     """
     Control the LED strips by lighting specific pixels.
@@ -33,5 +35,3 @@ def control_leds(strip1_pixels, strip2_pixels, color=COLOR):
     """
     light_pixels(strip2, strip2_pixels, color)
     light_pixels(strip1, strip1_pixels, color)
-
-
