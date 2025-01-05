@@ -4,7 +4,7 @@ import neopixel
 # Define the number of pixels for each strip
 NUM_PIXELS_STRIP1 = 91
 NUM_PIXELS_STRIP2 = 137
-COLOR = (255, 197, 40)  # Example color (R, G, B)
+COLOR = (255, 100, 40)  # Example color (R, G, B)
 
 # Initialize NeoPixel strips
 strip1 = neopixel.NeoPixel(board.D10, NUM_PIXELS_STRIP1, brightness=1, auto_write=False)
