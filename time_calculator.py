@@ -7,21 +7,44 @@ def time_in_words(hour: int, minute: int) -> str:
         "ELEVEN"
     ]
 
-    if minute < 5:
+    next_hour = (hour + 1) % 12
+
+    if minute < 3:
         return f"{starting_words} {hours[hour]} OCLOCK"
-    elif minute <= 30:
-        minutes_index = minute // 5 - 1
-        return f"{starting_words} {minutes_words[minutes_index]} PAST {hours[hour]}"
+    elif minute < 8:
+        return f"{starting_words} FIVE PAST {hours[hour]}"
+    elif minute < 13:
+        return f"{starting_words} TEN PAST {hours[hour]}"
+    elif minute < 18:
+        return f"{starting_words} QUARTER PAST {hours[hour]}"
+    elif minute < 23:
+        return f"{starting_words} TWENTY PAST {hours[hour]}"
+    elif minute < 28:
+        return f"{starting_words} TWENTY FIVE PAST {hours[hour]}"
+    elif minute < 33:
+        return f"{starting_words} HALF PAST {hours[hour]}"
+    elif minute < 38:
+        return f"{starting_words} TWENTY FIVE TO {hours[next_hour]}"
+    elif minute < 43:
+        return f"{starting_words} TWENTY TO {hours[next_hour]}"
+    elif minute < 48:
+        return f"{starting_words} QUARTER TO {hours[next_hour]}"
+    elif minute < 53:
+        return f"{starting_words} TEN TO {hours[next_hour]}"
+    elif minute < 58:
+        return f"{starting_words} FIVE TO {hours[next_hour]}"
     else:
-        minutes_index = (60 - minute) // 5 -1
-        next_hour = (hour + 1) % 12
-        return f"{starting_words} {minutes_words[minutes_index]} TO {hours[next_hour]}"
+        return f"{starting_words} {hours[next_hour]} OCLOCK"
+
+
+# for i in range(0, 60):
+#     print('{}: {}'.format(i, time_in_words(0, i)))
 
 # Examples
 # print(time_in_words(0, 0))  # IT IS TWELVE O'CLOCK (mindnight)
+# print(time_in_words(0, 1))  # IT IS TWELVE O'CLOCK (mindnight)
 # print(time_in_words(0, 2))  # IT IS TWELVE O'CLOCK (mindnight)
-# print(time_in_words(0, 5))  # IT IS TWELVE O'CLOCK (mindnight)
-# print(time_in_words(0, 7))  # IT IS TWELVE O'CLOCK (mindnight)
+# print(time_in_words(0, 3))  # IT IS TWELVE O'CLOCK (mindnight)
 # print(time_in_words(0, 9))  # IT IS TWELVE O'CLOCK (mindnight)
 # print(time_in_words(0, 10))  # IT IS TWELVE O'CLOCK (mindnight)
 # print(time_in_words(0, 11))  # IT IS TWELVE O'CLOCK (mindnight)
@@ -46,4 +69,3 @@ def time_in_words(hour: int, minute: int) -> str:
 # print(time_in_words(9, 0))  # IT IS QUARTER TO TWELVE
 # print(time_in_words(10, 0))  # IT IS QUARTER TO TWELVE
 # print(time_in_words(11, 0))  # IT IS QUARTER TO TWELVE
-
