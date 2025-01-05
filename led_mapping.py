@@ -45,10 +45,14 @@ def get_led_numbers(sentence):
     # Traverse the LETTERS grid until all words are matched
     for row_idx, row in enumerate(LETTERS):
         row_string = ''.join(row)  # Combine row into a single string
-
+        search_start = 0
         while words:  # Process as long as there are words left
+
+            if search_start >= len(row_string):
+                break
+
             word = words[0]  # Look at the first word
-            start_index = row_string.find(word)  # Search for the word in the current row
+            start_index = row_string.find(word, search_start)  # Search for the word in the current row
 
             if start_index != -1:  # If the word is found
                 # Map LEDs for the word
@@ -59,6 +63,7 @@ def get_led_numbers(sentence):
                     else:
                         strip2_leds.append(led)
 
+                search_start = start_index + len(word)
                 words.pop(0)  # Remove the matched word
             else:
                 break  # Move to the next row if the word isn't found in the current row
@@ -71,3 +76,7 @@ def get_led_numbers(sentence):
         raise ValueError(f"Cannot match words: {' '.join(words)}")
 
     return strip1_leds, strip2_leds
+
+#
+# strip1, strip2 = get_led_numbers("IT IS QUARTER TO TEN")
+# print('{}, {}'.format(strip1, strip2))
