@@ -8,7 +8,7 @@ def time_in_words(hour: int, minute: int) -> str:
     ]
 
     if minute < 5:
-        return f"{starting_words} {hours[hour]} O'CLOCK"
+        return f"{starting_words} {hours[hour]} OCLOCK"
     elif minute <= 30:
         minutes_index = minute // 5 - 1
         return f"{starting_words} {minutes_words[minutes_index]} PAST {hours[hour]}"
