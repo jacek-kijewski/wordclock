@@ -71,13 +71,3 @@ def get_led_numbers(sentence):
         raise ValueError(f"Cannot match words: {' '.join(words)}")
 
     return strip1_leds, strip2_leds
-
-
-# Example usage
-try:
-    sentence = "IT IS FIVE PAST TEN"
-    strip1_leds, strip2_leds = get_led_numbers(sentence)
-    print(f"LEDs for strip 1: {strip1_leds}")
-    print(f"LEDs for strip 2: {strip2_leds}")
-except ValueError as e:
-    print(f"Error: {e}")

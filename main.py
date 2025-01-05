@@ -21,6 +21,8 @@ def main():
         # Get the LED numbers from the mapping
         strip1_leds, strip2_leds = get_led_numbers(time_in_words)
 
+        print(f"LEDs for strip 1: {strip1_leds}")
+        print(f"LEDs for strip 2: {strip2_leds}")
         # Control LEDs with the obtained LED indices
         control_leds(strip1_leds, strip2_leds)
 
