@@ -12,8 +12,7 @@ def main():
     # Convert the current time to words
 
     time_in_words = time_to_words(current_hours, current_minutes)
-    current_hours = current_time.tm_hour % 12  # Convert to 12-hour format
-    current_minutes = current_time.tm_min
+
 
     print(f"Current time: {time_str} -> {time_in_words}")
 
