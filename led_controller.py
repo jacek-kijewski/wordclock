@@ -8,7 +8,7 @@ COLOR = (255, 197, 80)  # Example color (R, G, B)
 
 # Initialize NeoPixel strips
 strip1 = neopixel.NeoPixel(board.D10, NUM_PIXELS_STRIP1, brightness=0.5, auto_write=False)
-strip2 = neopixel.NeoPixel(board.D12, NUM_PIXELS_STRIP2, brightness=0.1, auto_write=False)
+strip2 = neopixel.NeoPixel(board.D12, NUM_PIXELS_STRIP2, brightness=0.5, auto_write=False)
 
 def light_pixels(strip, pixels, color):
     """
