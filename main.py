@@ -1,6 +1,6 @@
 from led_controller import control_leds
 from led_mapping import get_led_numbers
-from time_calculator import time_to_words
+from time_calculator import time_in_words
 import time
 
 def main():
@@ -11,14 +11,14 @@ def main():
     current_minutes = current_time.tm_min
     # Convert the current time to words
 
-    time_in_words = time_to_words(current_hours, current_minutes)
+    time_words = time_in_words(current_hours, current_minutes)
 
 
-    print(f"Current time: {time_str} -> {time_in_words}")
+    print(f"Current time: {time_str} -> {time_words}")
 
     try:
         # Get the LED numbers from the mapping
-        strip1_leds, strip2_leds = get_led_numbers(time_in_words)
+        strip1_leds, strip2_leds = get_led_numbers(time_words)
 
         print(f"LEDs for strip 1: {strip1_leds}")
         print(f"LEDs for strip 2: {strip2_leds}")
