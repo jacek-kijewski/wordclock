@@ -16,7 +16,7 @@ def time_in_words(hour: int, minute: int) -> str:
     elif minute < 13:
         return f"{starting_words} TEN PAST {hours[hour]}"
     elif minute < 18:
-        return f"{starting_words} QUARTER PAST {hours[hour]}"
+        return f"{starting_words} A QUARTER PAST {hours[hour]}"
     elif minute < 23:
         return f"{starting_words} TWENTY PAST {hours[hour]}"
     elif minute < 28:
