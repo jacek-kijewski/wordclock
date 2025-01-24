@@ -23,7 +23,7 @@ def main():
         print(f"LEDs for strip 1: {strip1_leds}")
         print(f"LEDs for strip 2: {strip2_leds}")
         # Control LEDs with the obtained LED indices
-        control_leds(strip1_leds, strip2_leds)
+        control_leds(strip1_leds,strip2_leds)
 
     except ValueError as e:
         print(f"Error processing time: {e}")
